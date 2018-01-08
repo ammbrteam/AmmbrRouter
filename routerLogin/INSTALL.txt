@@ -1,0 +1,22 @@
+1)The router Should be loaded with openWRT Chaos Calmer firmware:
+Install OpenWRT Chaos Calmer (15.05, r46767) from https://downloads.openwrt.org
+
+2)Download and install Nodogsplash version 0.9beta9.9.8: from here
+
+https://github.com/nodogsplash/nodogsplash/releases/tag/v0.9_beta9.9.8/nodogsplash_0.9_beta9.9.8-1_ar71xx.ipk
+
+opkg install nodogsplash_0.9_beta9.9.8-1_ar71xx.ipk
+
+3) copy folder ammbr to /www 
+	cp -r ammbr/ /www/
+
+4) replace splash.html at /etc/nodogsplash/htdocs with our modified splash.html
+
+	cp splash.html /etc/nodogsplash/htdocs/splash.html
+
+5) enable nodogsplash and start nodogsplash
+	/etc/init.d/nodogsplash enable
+	/etc/init.d/nodogsplash start
+
+6) Connect to wifi hosted by router, you will be redirected to ammbr login page. By Default SSID will be called OpenWRT. 
+   Wireless configuration can be changed by logging into the luci management portal
